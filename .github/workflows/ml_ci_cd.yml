@@ -1,16 +1,5 @@
 name: Modelops-deploy
 on:
-  workflow_dispatch:
-    inputs:
-      codeurl:
-        description: "URL of the code"
-        required: true
-        default: ""
-      MODEL_NAME:
-        description: "Name of the model"
-        required: true
-        default: ""
-
   push:
     branches: [ master ]
   pull_request:
