@@ -1,5 +1,6 @@
 name: Modelops-deploy
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
   pull_request:
