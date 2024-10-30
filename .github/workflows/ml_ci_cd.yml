@@ -29,3 +29,6 @@ jobs:
         run: ls -la
       - name: pip install
         run: pip install -r requirements.txt
+      - name: train model
+        run: python model/train.py
+
