@@ -25,3 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: python version
         run: python --version
+      - name: list directories
+        run: ls -la
+      - name: pip install
+        run: pip install -r requirements.txt
