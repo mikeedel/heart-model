@@ -27,6 +27,8 @@ jobs:
         run: python --version
       - name: list directories
         run: ls -la
+      - name: List files in data
+        run: ls -la data
       - name: pip install
         run: pip install -r requirements.txt
       - name: train model
