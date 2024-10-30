@@ -45,7 +45,7 @@ jobs:
       - name: Configure Docker credential helper
         run: |
           mkdir -p ~/.docker
-          echo '{"credsStore": "pass"}' > ~/.docker/config.json
+          echo '{"credHelpers": {"hub.docker.com": "secretservice"}}' > ~/.docker/config.json
       - name: docker Push
         run: docker push ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME}}:${{ github.sha }}
 
