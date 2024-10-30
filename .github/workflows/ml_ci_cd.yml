@@ -42,10 +42,7 @@ jobs:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin 
-      - name: Configure Docker credential helper
-        run: |
-          mkdir -p ~/.docker
-          echo '{"credHelpers": {"hub.docker.com": "secretservice"}}' > ~/.docker/config.json
+    
       - name: docker Push
         run: docker push ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME}}:${{ github.sha }}
 
